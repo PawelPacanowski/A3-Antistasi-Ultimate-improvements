@@ -1,4 +1,4 @@
-#define SKILL_CAP 40
+#define SKILL_CAP 10
 
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()

@@ -1,4 +1,4 @@
-#define SKILL_CAP 40
+#define SKILL_CAP 10
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
@@ -22,7 +22,7 @@ if (skillFIA >= SKILL_CAP) exitWith {
 };
 
 private _resourcesFIA = server getVariable "resourcesFIA";
-private _costs = 1000 + (1.5*(skillFIA *750));
+private _costs = 20000 * skillFIA - 12500;
 
 private _result = [(format["Are you sure? Price will be %2%1", _costs, A3A_faction_civ get "currencySymbol"]), "Confirm", true, true] call BIS_fnc_guiMessage;
 
