@@ -13,7 +13,8 @@ if (player != leader group player) exitWith {[localize "STR_A3A_reinf_reinfPlaye
 private _hr = server getVariable "hr";
 
 if (_hr < 1) exitWith {[localize "STR_A3A_reinf_reinfPlayer_header", localize "STR_A3A_reinf_reinfPlayer_no_hr"] call A3A_fnc_customHint;};
-private _costs = server getVariable _typeUnit;
+private _unitData = server getVariable _typeUnit;
+private _costs = _unitData get "currentCost";
 private _resourcesFIA = player getVariable ["moneyX", 0];
 
 if (_costs > _resourcesFIA) exitWith {[localize "STR_A3A_reinf_reinfPlayer_header", format [localize "STR_A3A_reinf_reinfPlayer_no_money", _costs, A3A_faction_civ get "currencySymbol"]] call A3A_fnc_customHint;};

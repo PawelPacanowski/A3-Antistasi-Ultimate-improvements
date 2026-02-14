@@ -164,14 +164,10 @@ if (_varName in specialVarLoads) then {
             skillFIA = _varValue; 
             publicVariable "skillFIA";
             {
-                _costs = server getVariable (_x + "_baseCost");
-                // for "_i" from 1 to _varValue do {
-                //     // _costs = round (_costs + (_costs * (_i/840)));
-                //     _costs = round(_costs + _costs / 9 * _i - _costs / 9);
-                // };
-
-                _costs = round(_costs + _costs / 9 * skillFIA - _costs / 9);
-                server setVariable [_x,_costs,true];
+                _unitData = server getVariable _x;
+                _baseCost = _unitData get "baseCost";
+                _unitData set ["currentCost", round(_baseCost + _baseCost / 9 * skillFIA - _baseCost / 9)];
+                server setVariable [_x, _unitData, true];
             } forEach FactionGet(reb,"unitsSoldiers");
         };
 

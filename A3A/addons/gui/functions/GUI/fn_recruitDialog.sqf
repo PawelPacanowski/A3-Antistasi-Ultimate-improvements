@@ -62,14 +62,14 @@ switch (_mode) do
         private _bombSpecialistButton = _display displayCtrl  A3A_IDC_RECRUITBOMBSPECIALISTBUTTON;
 
         // Get unit prices
-        private _militiamanPrice = server getVariable FactionGet(reb,"unitRifle");
-        private _autoriflemanPrice = server getVariable FactionGet(reb,"unitMG");
-        private _grenadierPrice = server getVariable FactionGet(reb,"unitGL");
-        private _antitankPrice = server getVariable FactionGet(reb,"unitLAT");
-        private _medicPrice = server getVariable FactionGet(reb,"unitMedic");
-        private _marksmanPrice = server getVariable FactionGet(reb,"unitSniper");
-        private _engineerPrice = server getVariable FactionGet(reb,"unitEng");
-        private _bombSpecialistPrice = server getVariable FactionGet(reb,"unitExp");
+        private _militiamanPrice = (server getVariable FactionGet(reb,"unitRifle")) get "currentCost";
+        private _autoriflemanPrice = (server getVariable FactionGet(reb,"unitMG")) get "currentCost";
+        private _grenadierPrice = (server getVariable FactionGet(reb,"unitGL")) get "currentCost";
+        private _antitankPrice = (server getVariable FactionGet(reb,"unitLAT")) get "currentCost";
+        private _medicPrice = (server getVariable FactionGet(reb,"unitMedic")) get "currentCost";
+        private _marksmanPrice = (server getVariable FactionGet(reb,"unitSniper")) get "currentCost";
+        private _engineerPrice = (server getVariable FactionGet(reb,"unitEng")) get "currentCost";
+        private _bombSpecialistPrice = (server getVariable FactionGet(reb,"unitExp")) get "currentCost";
 
         // Update price labels
         _militiamanPriceText ctrlSetText ((str _militiamanPrice) + A3A_faction_civ get "currencySymbol");

@@ -58,10 +58,11 @@ publicVariable "skillFIA";
 server setVariable ["resourcesFIA",_resourcesFIA,true];
 [] spawn A3A_fnc_statistics;
 {
-    _costs = server getVariable _x;
-    _costs = round (_costs + (_costs * (skillFIA/840)));
-    server setVariable [_x,_costs,true];
-} forEach FactionGet(reb,"unitsSoldiers");
+    _unitData = server getVariable _x;
+    _baseCost = _unitData get "baseCost";
+    _unitData set ["currentCost", round(_baseCost + _baseCost / 9 * skillFIA - _baseCost / 9)];
+    server setVariable [_x, _unitData, true];
+} forEach FactionGet(reb, "unitsSoldiers"); 
 
 
 private _display = findDisplay 60000;

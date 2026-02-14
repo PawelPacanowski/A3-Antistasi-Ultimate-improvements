@@ -629,11 +629,11 @@ if (A3A_hasACRE && startWithLongRangeRadio) then {FactionGet(reb,"initialRebelEq
 ////////////////////////////////////
 Info("Creating pricelist");
 
-{server setVariable [_x,50,true]} forEach [FactionGet(reb,"unitRifle"), FactionGet(reb,"unitCrew")];
-{server setVariable [_x,75,true]} forEach [FactionGet(reb,"unitMG"), FactionGet(reb,"unitGL"), FactionGet(reb,"unitLAT")];
-{server setVariable [_x,100,true]} forEach [FactionGet(reb,"unitMedic"), FactionGet(reb,"unitExp"), FactionGet(reb,"unitEng")];
-{server setVariable [_x,150,true]} forEach [FactionGet(reb,"unitSL"), FactionGet(reb,"unitSniper")];
-{server setVariable [_x,500,true]} forEach [FactionGet(reb,"unitAT"), FactionGet(reb,"unitAA")];
+{server setVariable [_x, createHashMapFromArray [["baseCost", 50], ["currentCost", 50]] ,true]} forEach [FactionGet(reb,"unitRifle"), FactionGet(reb,"unitCrew")];
+{server setVariable [_x, createHashMapFromArray [["baseCost", 75], ["currentCost", 75]] ,true]} forEach [FactionGet(reb,"unitMG"), FactionGet(reb,"unitGL"), FactionGet(reb,"unitLAT")];
+{server setVariable [_x, createHashMapFromArray [["baseCost", 100], ["currentCost", 100]] ,true]} forEach [FactionGet(reb,"unitMedic"), FactionGet(reb,"unitExp"), FactionGet(reb,"unitEng")];
+{server setVariable [_x, createHashMapFromArray [["baseCost", 150], ["currentCost", 150]] ,true]} forEach [FactionGet(reb,"unitSL"), FactionGet(reb,"unitSniper")];
+{server setVariable [_x, createHashMapFromArray [["baseCost", 500], ["currentCost", 500]] ,true]} forEach [FactionGet(reb,"unitAT"), FactionGet(reb,"unitAA")];
 
 //black market costs
 {server setVariable [_x select 0, _x select 1, true]} forEach (FactionGet(reb,"blackMarketStock"));
