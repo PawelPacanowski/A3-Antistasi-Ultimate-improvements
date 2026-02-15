@@ -166,7 +166,7 @@ if (_varName in specialVarLoads) then {
             {
                 _unitData = server getVariable _x;
                 _baseCost = _unitData get "baseCost";
-                _unitData set ["currentCost", round(_baseCost + _baseCost / 9 * skillFIA - _baseCost / 9)];
+                _unitData set ["currentCost", round(0.1 * _baseCost * skillFIA + _baseCost)];
                 server setVariable [_x, _unitData, true];
             } forEach FactionGet(reb,"unitsSoldiers");
         };

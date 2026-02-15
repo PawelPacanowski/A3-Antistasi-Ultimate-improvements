@@ -63,7 +63,8 @@ if (_globalSave) then
 		if (alive _x && (_x getVariable ["owner", objNull] == _playerUnit)) then
 		{
 			if (_x != _playerUnit) then {
-				private _unitPrice = server getVariable [_x getVariable "unitType", 0];
+				private _unitData = server getVariable [_x getVariable "unitType", 0];
+				private _unitPrice = _unitData get "currentCost";
 				_totalMoney = _totalMoney + _unitPrice;
 			};
 			private _veh = vehicle _x;

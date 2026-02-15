@@ -659,16 +659,16 @@ class Params
     class A3A_enemySkillMul: AIBalanceParams
     {
         title = $STR_params_A3A_enemySkillMul;
-        values[] = {0,1,2,3,4};
+        values[] = {1,2,3,4,5};
         texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
-        default = 2;
+        default = 3;
     };
     class A3A_rebelSkillMul: AIBalanceParams
     {
         title = $STR_params_A3A_rebelSkillMul;
-        values[] = {0,1,2,3,4};
+        values[] = {1,2,3,4,5};
         texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
-        default = 2;
+        default = 3;
     };
     class aiAccuracyCeiling: AIBalanceParams
     {

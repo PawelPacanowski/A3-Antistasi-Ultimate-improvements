@@ -21,7 +21,7 @@ if (count _this > 1) then {
 _unit allowFleeing 0;
 
 private _typeX = _unit getVariable "unitType";
-private _skill = (0.1 + 0.1*A3A_rebelSkillMul + 0.015 * skillFIA);
+private _skill = ((A3A_rebelSkillMul + 2) * skillFIA + (5 * (A3A_rebelSkillMul - 1) + 10)) / 100;
 _unit setSkill _skill;
 
 if (_typeX isEqualTo FactionGet(reb,"unitSL")) then {

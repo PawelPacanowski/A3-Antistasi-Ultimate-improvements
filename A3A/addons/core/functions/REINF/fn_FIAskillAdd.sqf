@@ -22,7 +22,7 @@ if (skillFIA >= SKILL_CAP) exitWith {
 };
 
 private _resourcesFIA = server getVariable "resourcesFIA";
-private _costs = 20000 * skillFIA - 12500;
+private _costs = round(2000 * skillFIA ^ 2 + 5000);
 
 private _result = [(format["Are you sure? Price will be %2%1", _costs, A3A_faction_civ get "currencySymbol"]), "Confirm", true, true] call BIS_fnc_guiMessage;
 
@@ -60,7 +60,8 @@ server setVariable ["resourcesFIA",_resourcesFIA,true];
 {
     _unitData = server getVariable _x;
     _baseCost = _unitData get "baseCost";
-    _unitData set ["currentCost", round(_baseCost + _baseCost / 9 * skillFIA - _baseCost / 9)];
+    // _unitData set ["currentCost", round(_baseCost + _baseCost / 9 * skillFIA - _baseCost / 9)];
+    _unitData set ["currentCost", round(0.1 * _baseCost * skillFIA + _baseCost)];
     server setVariable [_x, _unitData, true];
 } forEach FactionGet(reb, "unitsSoldiers"); 
 
