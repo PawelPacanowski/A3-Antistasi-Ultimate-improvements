@@ -94,7 +94,8 @@ _unit addEventHandler ["Deleted", A3A_fnc_enemyUnitDeletedEH];
 //Calculates the skill of the given unit
 //private _skill = (0.15 * skillMult) + (0.04 * difficultyCoef) + (0.02 * tierWar);
 // private _skill = (0.1 * A3A_enemySkillMul) + (0.07 * (1 max A3A_activePlayerCount^0.5)) + (0.01 * tierWar);
-private _skill = (2 * (A3A_enemySkillMul + 2) * (tierWar - 1) + 5 * (A3A_enemySkillMul - 1) + 10) / 100 + 0.1 * (1 max A3A_activePlayerCount ^ 0.5);
+// private _skill = (2 * (A3A_enemySkillMul + 2) * (tierWar - 1) + 5 * (A3A_enemySkillMul - 1) + 10) / 100 + 0.1 * (1 max A3A_activePlayerCount ^ 0.5);
+private _skill = 0.1 * A3A_enemySkillMul * (0.11 * tierWar + 0.7) + 0.1 * (1 max A3A_activePlayerCount ^ 0.5);
 private _regularFaces = nil;
 private _regularVoices = nil;
 private _regularInsignia = nil;

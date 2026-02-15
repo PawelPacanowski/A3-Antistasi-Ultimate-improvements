@@ -13,7 +13,8 @@ private _typeX = _unit getVariable "unitType";
 // 5 -> [30, 100]
 // 3 -> [20, 70]
 // 1 -> [10, 40]
-private _skill = ((A3A_rebelSkillMul + 2) * skillFIA + (5 * (A3A_rebelSkillMul - 1) + 10)) / 100;
+// private _skill = ((A3A_rebelSkillMul + 9) * skillFIA + 5 * (A3A_rebelSkillMul - 2) + 3) / 100;
+private _skill = 0.1 * A3A_rebelSkillMul * (0.2 * skillFIA + 0.46);
 _unit setSkill _skill;
 
 if (_typeX isEqualTo FactionGet(reb,"unitSL")) then {

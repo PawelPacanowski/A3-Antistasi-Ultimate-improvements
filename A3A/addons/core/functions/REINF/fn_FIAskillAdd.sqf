@@ -22,7 +22,7 @@ if (skillFIA >= SKILL_CAP) exitWith {
 };
 
 private _resourcesFIA = server getVariable "resourcesFIA";
-private _costs = round(2000 * skillFIA ^ 2 + 5000);
+private _costs = round(2400 * skillFIA ^ 2 + 5000);
 
 private _result = [(format["Are you sure? Price will be %2%1", _costs, A3A_faction_civ get "currencySymbol"]), "Confirm", true, true] call BIS_fnc_guiMessage;
 

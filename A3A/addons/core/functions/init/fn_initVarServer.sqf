@@ -61,7 +61,7 @@ DECLARE_SERVER_VAR(AAFpatrols,0);
 //Should vegetation around HQ be cleared
 DECLARE_SERVER_VAR(chopForest, false);
 
-DECLARE_SERVER_VAR(skillFIA, 0);																		//Initial skill level for FIA soldiers
+DECLARE_SERVER_VAR(skillFIA, 1);																		//Initial skill level for FIA soldiers
 //Initial Occupant Aggression
 DECLARE_SERVER_VAR(aggressionOccupants, 0);
 DECLARE_SERVER_VAR(aggressionStackOccupants, []);
