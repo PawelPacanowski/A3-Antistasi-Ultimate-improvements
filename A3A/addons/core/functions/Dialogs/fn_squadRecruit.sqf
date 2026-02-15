@@ -18,24 +18,24 @@ private _display = findDisplay 100;
 
 if (str (_display) == "no display") exitWith {};
 
-private _crewCost = server getVariable FactionGet(reb,"unitCrew");
+private _crewCost = (server getVariable FactionGet(reb,"unitCrew")) get "currentCost";
 
 private _costs = 0;
 private _costHR = 0;
 
 _costs = 0;
 _costHR = 0;
-{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach FactionGet(reb,"groupMedium");
+{_costs = _costs + ((server getVariable _x) get "currentCost"); _costHR = _costHR +1} forEach FactionGet(reb,"groupMedium");
 (_display displayCtrl 105) ctrlSetTooltip format [localize "STR_dialog_cost_hire",_costs,_costHR, A3A_faction_civ get "currencySymbol"];
 
 _costs = 0;
 _costHR = 0;
-{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach FactionGet(reb,"groupAT");
+{_costs = _costs + ((server getVariable _x) get "currentCost"); _costHR = _costHR +1} forEach FactionGet(reb,"groupAT");
 (_display displayCtrl 106) ctrlSetTooltip format [localize "STR_dialog_cost_hire",_costs,_costHR, A3A_faction_civ get "currencySymbol"];
 
 _costs = 0;
 _costHR = 0;
-{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach FactionGet(reb,"groupSniper");
+{_costs = _costs + ((server getVariable _x) get "currentCost"); _costHR = _costHR +1} forEach FactionGet(reb,"groupSniper");
 (_display displayCtrl 107) ctrlSetTooltip format [localize "STR_dialog_cost_hire",_costs,_costHR, A3A_faction_civ get "currencySymbol"];
 
 _costHR = 2;
@@ -44,7 +44,7 @@ _costs = 2*_crewCost + ([(FactionGet(reb, "staticMGs")) # 0] call A3A_fnc_vehicl
 
 _costs = 0;
 _costHR = 0;
-{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach FactionGet(reb,"groupCrew");
+{_costs = _costs + ((server getVariable _x) get "currentCost"); _costHR = _costHR +1} forEach FactionGet(reb,"groupCrew");
 (_display displayCtrl 112) ctrlSetTooltip format [localize "STR_dialog_cost_hire",_costs,_costHR, A3A_faction_civ get "currencySymbol"];
 
 _costHR = 2;

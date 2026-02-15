@@ -34,7 +34,7 @@ params [
 private _cost = if (isNull _vehicle) then { 0 } else { [typeOf _vehicle] call A3A_fnc_vehiclePrice };
 private _costHR = 0;
 {
-    _cost = _cost + (server getVariable _x); _costHR = _costHR +1
+    _cost = _cost + ((server getVariable _x) get "currentCost"); _costHR = _costHR +1
 } forEach _unitTypes;
 
 //spawn group
